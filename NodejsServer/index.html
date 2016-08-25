@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Node Socket</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io();
+        var username = "name";
+        function handleResponse()
+        {
+              document.getElementById('inputId').placeholder = username;
+              socket.emit('echo', username + " Registered");
+        }
+        socket.on('register',function(data){
+            username = data;
+            document.getElementById('inputId').placeholder = data + " Requested to join";
+        });
+
+    </script>
+</head>
+<body>
+<h1>Node.js Socket</h1>
+<div>
+    <h2>Register</h2>
+    <input id="inputId" placeholder="Waiting......." > </input>
+    <button id="button" onclick="handleResponse()">Echo</button>
+</div>
+</body>
+</html>
