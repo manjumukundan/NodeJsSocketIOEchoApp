@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SocketIO Chat App</string>
+    <string name="title_activity_login">Register</string>
+</resources>
